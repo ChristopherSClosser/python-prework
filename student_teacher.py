@@ -68,4 +68,7 @@ def get_class_average(class_list):
         return class_avg
 
 
-print 'Class average: %s' % get_class_average(first_class)
+first_class_avg = get_class_average(first_class)
+print 'Class average: %s' % first_class_avg
+class_letter = get_letter_grade(first_class_avg)
+print class_letter
