@@ -24,12 +24,10 @@ def receipt():
         print
 
 
-receipt()
-
-
 def compute_bill(food):
     # prints and calculates bought items
     # adjusts inventory
+    receipt()
     print "-------------"
     print "YOUR BILL"
     total = 0
@@ -39,11 +37,10 @@ def compute_bill(food):
             print "%s: %s" % (item, prices[item])
             stock[item] = stock[item] - 1
     return total
+    receipt()
 
 
 # sending a list of items to buy
 shopping_list = ["banana", "orange", "apple"]
 print "total: %s" % compute_bill(shopping_list)
 print "-------------"
-
-receipt()
