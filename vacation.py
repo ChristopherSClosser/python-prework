@@ -1,7 +1,12 @@
+# Vacation calculator
+
 def hotel_cost(nights):
+  # should make cost per night
+  # user input
   return 140 * nights
 
 def plane_ride_cost(city):
+  # all the magic numbers :(
   if city == 'Charlotte':
     return 183
   elif city == 'Tampa':
