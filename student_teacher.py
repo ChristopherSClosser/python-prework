@@ -1,20 +1,24 @@
+# prints students and grades and a class average
+
 lloyd = {
-  "name": "Lloyd",
-  "homework": [90.0, 97.0, 75.0, 92.0],
-  "quizzes": [88.0, 40.0, 94.0],
-  "tests": [75.0, 90.0]
+    "name": "Lloyd",
+    "homework": [90.0, 97.0, 75.0, 92.0],
+    "quizzes": [88.0, 40.0, 94.0],
+    "tests": [75.0, 90.0]
 }
+
 alice = {
-  "name": "Alice",
-  "homework": [100.0, 92.0, 98.0, 100.0],
-  "quizzes": [82.0, 83.0, 91.0],
-  "tests": [89.0, 97.0]
+    "name": "Alice",
+    "homework": [100.0, 92.0, 98.0, 100.0],
+    "quizzes": [82.0, 83.0, 91.0],
+    "tests": [89.0, 97.0]
 }
+
 tyler = {
-  "name": "Tyler",
-  "homework": [0.0, 87.0, 75.0, 22.0],
-  "quizzes": [0.0, 75.0, 78.0],
-  "tests": [100.0, 100.0]
+    "name": "Tyler",
+    "homework": [0.0, 87.0, 75.0, 22.0],
+    "quizzes": [0.0, 75.0, 78.0],
+    "tests": [100.0, 100.0]
 }
 
 
@@ -29,9 +33,13 @@ def get_average(student):
     homework = average(student['homework'])
     quizzes = average(student['quizzes'])
     tests = average(student['tests'])
+    # 10% wheight
     homework = homework * 0.10
+    # 30%
     quizzes = quizzes * 0.3
+    # 60%
     tests = tests * 0.6
+    # average for overall grade
     total = homework + quizzes + tests
     return total
 
@@ -52,6 +60,7 @@ def get_letter_grade(score):
 first_class = [lloyd, alice, tyler]
 
 for student in first_class:
+    # prints out each students info
     first_quarter = get_average(student)
     print student['name']
     print first_quarter
@@ -70,5 +79,6 @@ def get_class_average(class_list):
 
 first_class_avg = get_class_average(first_class)
 print 'Class average: %s' % first_class_avg
+
 class_letter = get_letter_grade(first_class_avg)
 print class_letter
