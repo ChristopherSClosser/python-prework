@@ -122,7 +122,8 @@ def purify(number_list):
             even_list.append(num)
     return even_list
 
-# this returns a list of even numbers 
+
+# this returns a list of even numbers
 print purify([1, 2, 3, 4, 5, 5, 6, 7, 7767, 745, 67546754, 674, 324534])
 
 
@@ -135,3 +136,24 @@ def product(list):
 
 
 print product([1, 5, 2, 2])  # 1*5*2*2
+
+
+# return only one if multiplies
+def remove_duplicates(inputlist):
+    if inputlist == []:
+        return []
+# Sort the input list from low to high
+    inputlist = sorted(inputlist)
+# Initialize the output list, and give it the first value of the now-sorted
+# input list
+    outputlist = [inputlist[0]]
+
+# Go through the values of the sorted list and append to the output list
+# ...any values that are greater than the last value of the output list
+    for i in inputlist:
+        if i > outputlist[-1]:
+            outputlist.append(i)
+    return outputlist
+
+
+print remove_duplicates([1, 4, 5, 2, 3, 1, 3, 1, 4, 2, 3, 5, 5])
